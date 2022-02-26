@@ -3,16 +3,17 @@ const app = express();
 const { PORT = 8000 } = process.env;
 
 const expressLayout = require("express-ejs-layouts");
-const setDefault = (req, res, next) => {
-  res.locals.contentName = "Default";
+// const setDefault = (req, res, next) => {
+//   res.locals.contentName = "Default";
 
-  next();
-};
+//   next();
+// };
 
 // View Engine
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(expressLayout);
+// app.use(setDefault());
 app.set("layout", "layouts/default");
 
 // parser
