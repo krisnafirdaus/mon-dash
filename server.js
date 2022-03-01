@@ -13,7 +13,11 @@ const expressLayout = require("express-ejs-layouts");
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 app.use(expressLayout);
-// app.use(setDefault());
+app.use((req, res, next) => {
+  res.locals.contentName = "Default";
+
+  next();
+});
 app.set("layout", "layouts/default");
 
 // parser
