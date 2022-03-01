@@ -1,0 +1,27 @@
+<div class="px-0 py-4"></div>
+<div class="list-group">
+  <% data.forEach(i => { %>
+  <div class="list-group-item">
+    <div class="d-flex w-100 justify-content-between">
+      <h4 class="mb-1"><%= i.title %></h4>
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <h5 class="mb-1">Post</h5>
+        <small>Total Entities</small>
+        <h6><%= i.Post %></h6>
+      </div>
+      <div class="col-4">
+        <h5 class="mb-1">Visitor</h5>
+        <small>Total Entities</small>
+        <h6><%= i.Visitor %></h6>
+      </div>
+      <div class="col-4">
+        <h5 class="mb-1">Reader</h5>
+        <small>Total Entities</small>
+        <h6><%= i.Reader %></h6>
+      </div>
+    </div>
+  </div>
+  <% }) %>
+</div>

@@ -1,4 +1,6 @@
 const express = require("express");
+const session = require("express-session");
+const passport = require("./lib/passport");
 const app = express();
 const { PORT = 8000 } = process.env;
 
@@ -19,6 +21,15 @@ app.use((req, res, next) => {
   next();
 });
 app.set("layout", "layouts/default");
+app.use(
+  session({
+    secret: "Ciptowi",
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
 
 // parser
 app.use(express.urlencoded({ extended: false }));
